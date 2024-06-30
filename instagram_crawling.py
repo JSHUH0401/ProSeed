@@ -21,14 +21,11 @@ def insta_post_crawling(ID, PW, page, counts):
     import pandas as pd
     from konlpy.tag import Okt
     
-    driver = webdriver.Chrome()
     chrome_options = webdriver.ChromeOptions()
-    chrome_options.add_argument('--start-maximized')  # 전체화면
-    #chrome_options.add_argument('--headless')  # 브라우저 창을 열지 않고 실행하는 옵션입니다. 크롤링 과정 확인 위해 설정X
-    #chrome_options.add_argument('--no-sandbox')  # 코랩 환경에서의 필수 옵션입니다.
-    chrome_options.add_argument('--disable-dev-shm-usage')  # 코랩 환경에서의 필수 옵션입니다.
-    chrome_options.add_argument("disable-gpu")  # 가속 사용 x 사람처럼 보이지 않으면 차단됨.
-    chrome_options.add_argument("lang=ko_KR")  # 가짜 플러그인 탑재
+    chrome_options.add_argument('--start-maximized')
+    chrome_options.add_argument('--disable-dev-shm-usage')
+    chrome_options.add_argument("disable-gpu")
+    chrome_options.add_argument("lang=ko_KR")
     chrome_options.add_argument('user-agent=Mozilla/5.0 (Macintosh; Intel Mac OS X 10_12_6) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/61.0.3163.100 Safari/537.36')
     driver = webdriver.Chrome(options=chrome_options)
     url = 'https://www.instagram.com/'
